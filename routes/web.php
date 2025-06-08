@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminSubmissionController;
 use App\Http\Controllers\DepositoController;
+use App\Http\Controllers\JatengaiController;
 use App\Http\Controllers\PembiayaanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubmissionController;
@@ -61,6 +62,11 @@ Route::middleware('auth')->group(function () {
     Route::middleware('auth')->group(function () {
         Route::get('/tabungan', [SubmissionController::class, 'index'])->name('tabungan.index');
         Route::post('/tabungan', [SubmissionController::class, 'store'])->name('tabungan.store');
+
+
+
+        Route::get('/jatengai', [JatengaiController::class, 'index']);
+        Route::post('/jatengai/ask', [JatengaiController::class, 'ask'])->name('jatengai.ask');
     });
 
     Route::middleware(['auth', 'admin'])->group(function () {
