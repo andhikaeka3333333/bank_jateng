@@ -25,6 +25,14 @@
         }
     </style>
 </head>
+<!-- Floating Button JatengAI -->
+<a href="{{ url('/jatengai') }}"
+    class="fixed bottom-6 right-6 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition duration-300"
+    title="Jateng AI">
+    <img src="https://img.freepik.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?semt=ais_hybrid&w=740"
+        alt="Jateng AI" class="w-50 h-50 object-cover rounded-full shadow-[0_0_10px_rgba(253,224,71,0.8)]" />
+</a>
+
 
 <body class="bg-gray-50 min-h-screen">
 
@@ -33,7 +41,7 @@
             <div class="flex justify-between h-16 items-center">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="{{ route('dashboard') }}" class="text-yellow-600 font-bold text-xl">
+                    <a href="{{ url('/') }}" class="text-yellow-600 font-bold text-xl">
                         <img src="https://upload.wikimedia.org/wikipedia/id/thumb/c/c4/Bank_Jateng_logo.svg/120px-Bank_Jateng_logo.svg.png"
                             alt="">
                     </a>
