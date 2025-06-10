@@ -63,9 +63,9 @@
                         Pembiayaan
                     </a>
                     @if (Auth::check() && Auth::user()->role === 'admin')
-                        <a href="{{ route('deposito.index') }}"
-                            class="{{ request()->routeIs('deposito.index') ? 'nav-link-active' : 'nav-link' }}">
-                            Kelola Pengajuan
+                        <a href="{{ route('articles.index') }}"
+                            class="{{ request()->routeIs('articles.index') ? 'nav-link-active' : 'nav-link' }}">
+                            Kelola Artikel
                         </a>
                     @endif
                 </div>
@@ -127,9 +127,9 @@
                 Pembiayaan
             </a>
             @if (Auth::check() && Auth::user()->role === 'admin')
-                <a href="{{ route('deposito.index') }}"
-                    class="{{ request()->routeIs('deposito.index') ? 'nav-link-active block' : 'nav-link block' }}">
-                    Kelola Pengajuan
+                <a href="{{ route('articles.index') }}"
+                    class="{{ request()->routeIs('articles') ? 'nav-link-active block' : 'nav-link block' }}">
+                    Kelola Berita
                 </a>
             @endif
 
