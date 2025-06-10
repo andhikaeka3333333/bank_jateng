@@ -1,189 +1,142 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Chat dengan Jatengai</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-        .chat-container {
-            width: 100%;
-            max-width: 600px;
-            background-color: #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            height: 80vh;
-        }
-        .chat-header {
-            background: linear-gradient(90deg, #007bff, #0056b3);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 12px 12px 0 0;
-            text-align: center;
-        }
-        .chat-header h2 {
-            margin: 0;
-            font-size: 1.2rem;
-        }
-        .chat-box {
-            flex-grow: 1;
-            overflow-y: auto;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .message {
-            display: flex;
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 18px;
-            line-height: 1.5;
-        }
-        .user-message {
-            background-color: #e1ffc7;
-            align-self: flex-end;
-            border-radius: 18px 18px 4px 18px;
-        }
-        .bot-message {
-            background-color: #f1f0f0;
-            align-self: flex-start;
-            border-radius: 18px 18px 18px 4px;
-        }
-        .loading-dots span {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #888;
-            animation: blink 1.4s infinite both;
-        }
-        .loading-dots span:nth-child(2) { animation-delay: .2s; }
-        .loading-dots span:nth-child(3) { animation-delay: .4s; }
-        @keyframes blink {
-            0% { opacity: .2; }
-            20% { opacity: 1; }
-            100% { opacity: .2; }
-        }
-        .input-form {
-            display: flex;
-            padding: 15px;
-            border-top: 1px solid #e0e0e0;
-        }
-        #questionInput {
-            flex-grow: 1;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            margin-right: 10px;
-            font-size: 1rem;
-        }
-        #sendButton {
-            padding: 12px 20px;
-            border: none;
-            background-color: #007bff;
-            color: white;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        #sendButton:disabled {
-            background-color: #aaa;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>Tanya Jatengai</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<div class="chat-container">
-    <div class="chat-header">
-        <h2>Tanya Jatengai 🤖</h2>
-    </div>
-    <div class="chat-box" id="chatBox">
-        <div class="message bot-message">
-            Halo! Saya Jatengai, asisten AI dari Bank Jateng Syariah. Silakan tanyakan apa pun mengenai produk dan layanan kami.
-        </div>
-    </div>
-    <form class="input-form" id="chatForm" autocomplete="off">
-        <input type="text" id="questionInput" placeholder="Ketik pertanyaan Anda..." required>
-        <button type="submit" id="sendButton">Kirim</button>
-    </form>
-</div>
+<body class="bg-white font-sans flex flex-col items-center min-h-screen">
 
-<script>
+  <h2 class="text-2xl font-semibold text-blue-600 mt-8 mb-4">Tanya Jatengai</h2>
+
+  <!-- Chat container -->
+  <div class="flex flex-col w-full max-w-2xl h-[60vh] overflow-y-auto px-4 mb-2" id="chatBox">
+    <!-- Bot Message with Image -->
+    <div class="flex items-start gap-2 mb-2">
+      <img src="/robots.txt" alt="Bot Avatar" class="w-10 h-10 rounded-full border border-blue-500 p-1">
+      <div class="bg-blue-500 text-white rounded-xl rounded-tl-none px-4 py-3 max-w-[80%]">
+        <p>
+          Assalamualaikum warahmatullahi wabarakatuh.<br>
+          Selamat datang di JatengAI, asisten virtual resmi dari<br>
+          PT BPD Jateng Syariah (Bank Jateng Syariah).<br>
+          Saya siap membantu Bapak/Ibu dengan informasi seputar produk dan layanan kami.
+        </p>
+      </div>
+    </div>
+    <!-- Bot follow-up -->
+    <div class="flex items-start gap-2 mb-2">
+      <div class="w-10"></div>
+      <div class="bg-blue-500 text-white rounded-xl px-4 py-3 max-w-[80%]">
+        Ada pertanyaan yang bisa saya bantu jawab?
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed input -->
+  <form id="chatForm" autocomplete="off" class="fixed bottom-4 w-full max-w-2xl px-4 flex items-center gap-2">
+    <input
+      type="text"
+      id="questionInput"
+      placeholder="Masukkan pertanyaan..."
+      required
+      class="flex-grow bg-gray-100 border border-gray-300 rounded-full px-4 py-2 focus:outline-none"
+    />
+    <button
+      type="submit"
+      class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition"
+    >
+      Kirim
+    </button>
+  </form>
+
+  <script>
     const chatForm = document.getElementById('chatForm');
     const questionInput = document.getElementById('questionInput');
-    const sendButton = document.getElementById('sendButton');
     const chatBox = document.getElementById('chatBox');
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-    chatForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const question = questionInput.value.trim();
-        if (!question) return;
+    chatForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const question = questionInput.value.trim();
+      if (!question) return;
 
-        addMessage(question, 'user-message');
-        questionInput.value = '';
-        sendButton.disabled = true;
+      addMessage(question, 'user');
+      questionInput.value = '';
 
-        const loadingMessage = addLoadingIndicator();
+      const loading = addLoadingIndicator();
 
-        try {
-            const response = await fetch("{{ route('jatengai.ask') }}", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                body: JSON.stringify({ question: question })
-            });
+      try {
+        const response = await fetch("{{ route('jatengai.ask') }}", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': csrfToken
+          },
+          body: JSON.stringify({ question })
+        });
 
-            if (!response.ok) {
-                throw new Error(`Gagal (${response.status})`);
-            }
-
-            const data = await response.json();
-            const answer = data.answer || data.error || "Terjadi kesalahan tidak dikenal.";
-            loadingMessage.innerHTML = answer.replace(/\n/g, '<br>');
-
-        } catch (error) {
-            loadingMessage.innerText = 'Terjadi kesalahan: ' + error.message;
-        } finally {
-            sendButton.disabled = false;
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
+        const data = await response.json();
+        loading.innerHTML = data.answer.replace(/\n/g, '<br>');
+      } catch (err) {
+        loading.innerText = 'Terjadi kesalahan: ' + err.message;
+      }
     });
 
-    function addMessage(text, className) {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('message', className);
-        messageDiv.innerHTML = text;
-        chatBox.appendChild(messageDiv);
-        chatBox.scrollTop = chatBox.scrollHeight;
-        return messageDiv;
+    function addMessage(text, type) {
+      const wrapper = document.createElement('div');
+      wrapper.className = `flex items-start mb-2 gap-2 ${
+        type === 'user' ? 'justify-end' : ''
+      }`;
+
+      const msg = document.createElement('div');
+      msg.className =
+        type === 'user'
+          ? 'bg-gray-200 text-black rounded-xl px-4 py-2 max-w-[80%]'
+          : 'bg-blue-500 text-white rounded-xl px-4 py-2 max-w-[80%]';
+
+      msg.innerHTML = text;
+
+      if (type === 'bot') {
+        const img = document.createElement('img');
+        img.src = '/mnt/data/87df5f72-0bd9-4c02-9733-a54b8b5712d7.png';
+        img.className = 'w-10 h-10 rounded-full border border-blue-500 p-1';
+        wrapper.appendChild(img);
+      } else {
+        const spacer = document.createElement('div');
+        spacer.className = 'w-10';
+        wrapper.appendChild(spacer);
+      }
+
+      wrapper.appendChild(msg);
+      chatBox.appendChild(wrapper);
+      chatBox.scrollTop = chatBox.scrollHeight;
     }
 
     function addLoadingIndicator() {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('message', 'bot-message');
-        messageDiv.innerHTML = `
-            <div class="loading-dots">
-                <span></span><span></span><span></span>
-            </div>
-        `;
-        chatBox.appendChild(messageDiv);
-        chatBox.scrollTop = chatBox.scrollHeight;
-        return messageDiv;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'flex items-start mb-2 gap-2';
+
+      const img = document.createElement('img');
+      img.src = '/mnt/data/87df5f72-0bd9-4c02-9733-a54b8b5712d7.png';
+      img.className = 'w-10 h-10 rounded-full border border-blue-500 p-1';
+
+      const msg = document.createElement('div');
+      msg.className = 'bg-blue-500 text-white rounded-xl px-4 py-2 max-w-[80%]';
+      msg.innerHTML = `<div class="flex gap-1">
+        <span class="w-2 h-2 rounded-full bg-white animate-bounce"></span>
+        <span class="w-2 h-2 rounded-full bg-white animate-bounce [animation-delay:0.2s]"></span>
+        <span class="w-2 h-2 rounded-full bg-white animate-bounce [animation-delay:0.4s]"></span>
+      </div>`;
+
+      wrapper.appendChild(img);
+      wrapper.appendChild(msg);
+      chatBox.appendChild(wrapper);
+      chatBox.scrollTop = chatBox.scrollHeight;
+      return msg;
     }
-</script>
+  </script>
+
 </body>
 </html>
