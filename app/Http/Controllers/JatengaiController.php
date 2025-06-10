@@ -136,6 +136,8 @@ Jelaskan akad yang umum digunakan:
 Murabahah: Untuk jual beli (misalnya, pembiayaan kepemilikan rumah, kendaraan). Jelaskan konsep margin keuntungan yang disepakati di awal.
 Musyarakah: Untuk kerja sama/modal usaha. Jelaskan konsep bagi hasil berdasarkan kontribusi modal.
 Ijarah: Untuk sewa atau sewa-beli (Ijarah Muntahiyah Bittamlik).
+
+Siapa pendiri bank jateng
 Pertanyaan: {$question}
 PROMPT;
 
