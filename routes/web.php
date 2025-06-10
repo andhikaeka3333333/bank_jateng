@@ -1,16 +1,17 @@
 <?php
 
 use App\Http\Controllers\AdminSubmissionController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\DepositoController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JatengaiController;
 use App\Http\Controllers\PembiayaanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubmissionController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -83,6 +84,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile/password', [ProfileController::class, 'editPassword'])->name('profile.password');
     Route::patch('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
 });
+
+// Admin (CRUD penuh)
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::resource('articles', ArticleController::class);
+});
+
+// User publik bisa lihat artikel
+Route::get('/berita', [ArticleController::class, 'index'])->name('news.index');
+Route::get('/berita/{article}', [ArticleController::class, 'show'])->name('news.show');
 
 
 require __DIR__ . '/auth.php';
