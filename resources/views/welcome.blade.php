@@ -46,7 +46,7 @@
             </p>
         </div>
         <div class="w-1/2 flex items-center justify-center">
-            <img src="https://annualreport.id/assets/30BankJatengSyariah-1538214985.jpg" alt="Bank Jateng Syariah"
+            <img src="/images/salamjateng.jpg" alt="Bank Jateng Syariah"
                 class="w-3/4 h-auto object-contain">
         </div>
     </section>

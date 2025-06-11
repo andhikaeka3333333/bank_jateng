@@ -15,7 +15,7 @@
   <div class="flex flex-col w-full max-w-2xl h-[60vh] overflow-y-auto px-4 mb-2" id="chatBox">
     <!-- Bot Message with Image -->
     <div class="flex items-start gap-2 mb-2">
-      <img src="/robots.txt" alt="Bot Avatar" class="w-10 h-10 rounded-full border border-blue-500 p-1">
+      <img src="https://img.freepik.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?semt=ais_hybrid&w=740" alt="Bot Avatar" class="w-10 h-10 rounded-full border border-blue-500 p-1">
       <div class="bg-blue-500 text-white rounded-xl rounded-tl-none px-4 py-3 max-w-[80%]">
         <p>
           Assalamualaikum warahmatullahi wabarakatuh.<br>
@@ -100,7 +100,7 @@
 
       if (type === 'bot') {
         const img = document.createElement('img');
-        img.src = '/mnt/data/87df5f72-0bd9-4c02-9733-a54b8b5712d7.png';
+        img.src = 'https://img.freepik.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?semt=ais_hybrid&w=740';
         img.className = 'w-10 h-10 rounded-full border border-blue-500 p-1';
         wrapper.appendChild(img);
       } else {
@@ -119,7 +119,7 @@
       wrapper.className = 'flex items-start mb-2 gap-2';
 
       const img = document.createElement('img');
-      img.src = '/mnt/data/87df5f72-0bd9-4c02-9733-a54b8b5712d7.png';
+      img.src = 'https://img.freepik.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?semt=ais_hybrid&w=740';
       img.className = 'w-10 h-10 rounded-full border border-blue-500 p-1';
 
       const msg = document.createElement('div');
