@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan'])->nullable();
+            $table->string('nik', 16)->unique()->nullable();
+            $table->text('alamat')->nullable();
+            $table->string('no_hp', 15)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
