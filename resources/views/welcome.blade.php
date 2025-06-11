@@ -1,154 +1,167 @@
-<!DOCTYPE html>
-<html lang="id">
+@extends('welcome_layout.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Branch Bank Jateng Syariah</title>
-    <link href="https://fonts.bunny.net/css?family=inter:400,600,700,800" rel="stylesheet" />
-    @vite('resources/css/app.css')
-</head>
+@section('content')
+    <!-- Floating Button JatengAI -->
+    <a href="{{ url('/jatengai') }}"
+        class="fixed bottom-6 right-6 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition duration-300 z-50"
+        title="Jateng AI">
+        <img src="https://img.freepik.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?semt=ais_hybrid&w=740"
+            alt="Jateng AI" class="w-8 h-8 object-cover rounded-full shadow-[0_0_10px_rgba(253,224,71,0.8)]" />
+    </a>
 
-<body class="bg-white text-gray-900 font-sans antialiased">
+    <!-- HERO SECTION -->
+    <div class="w-screen h-screen bg-cover bg-center relative flex items-center justify-center"
+        style="background-image: url('/images/hero.png');">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
 
-    <div class="min-h-screen bg-gradient-to-b from-[#e6f4ea] via-[#f0fdf4] to-[#f9fafb]">
+        <div class="relative z-10 text-center text-white max-w-md">
+            <h1 class="text-5xl font-bold leading-tight mb-2">Selamat Datang</h1>
+            <h1 class="text-5xl font-bold leading-tight mb-2">di E-Branch</h1>
+            <h1 class="text-5xl font-bold leading-tight mb-16">
+                Bank Jateng <span class="text-yellow-400">Syariah</span>
+            </h1>
+            <a href="#"
+                class="inline-block bg-yellow-500 text-white px-6 py-3 rounded-full shadow-md font-semibold  hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
+                Mulai Sekarang
+            </a>
+        </div>
+    </div>
 
-        <!-- Header -->
-        <header class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-            <img src="https://bucket-api.baznas.go.id/bucket-api/file?bucket=bzn-fdr-smb-p5739641&file=attachments/rekening/172292650008666680_497-v2-Bank-Jateng-Syariah.png"
-                alt="" width="120">
-            @if (Route::has('login'))
-                <nav class="flex items-center gap-4">
-                    @auth
-                        <a href="{{ route('dashboard') }}"
-                            class="px-5 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">
-                            Dashboard
-                        </a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-[#146C43] hover:underline">Log in</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}"
-                                class="bg-[#146C43] text-white px-5 py-2 rounded-md text-sm hover:bg-[#125e3b] shadow">
-                                Register
-                            </a>
-                        @endif
-                    @endauth
-                </nav>
-            @endif
-        </header>
+    <section class="flex flex-row w-full min-h-screen bg-white">
+        <div class="w-1/2 p-20 flex flex-col justify-center mb-8">
+            <h1 class="text-4xl font-bold text-[#000A63] leading-tight ">
+                Solusi Digital<br>Perbankan Syariah
+            </h1>
+            <h1 class="text-4xl font-bold text-[#000A63] leading-tight">
+                Cepat dan Mudah
+            </h1>
+            <p class="text-gray-600 mt-6 text-base">
+                Bank Jateng Syariah adalah layanan inovatif perbankan digital yang dirancang khusus untuk memberikan
+                kemudahan bagi masyarakat dalam mengakses berbagai produk dan layanan keuangan syariah.
+                Melalui platform ini, Anda dapat membuka tabungan, deposito, serta mengajukan pembiayaan secara online tanpa
+                perlu datang ke kantor cabang.
+                Semua proses dilakukan dengan cepat, aman, transparan, dan tentunya sesuai dengan prinsip-prinsip syariah.
+                E-Branch hadir sebagai solusi modern untuk memenuhi kebutuhan finansial Anda kapan saja dan di mana saja,
+                mendukung gaya hidup praktis dan efisien di era digital.
+            </p>
+        </div>
+        <div class="w-1/2 flex items-center justify-center">
+            <img src="https://annualreport.id/assets/30BankJatengSyariah-1538214985.jpg" alt="Bank Jateng Syariah"
+                class="w-3/4 h-auto object-contain">
+        </div>
+    </section>
 
-        <div class="max-w-6xl mx-auto py-10 px-4">
-            <div class="mb-6">
-                <h1 class="text-3xl font-bold text-[#18494C]">Berita</h1>
-                <div class="w-24 h-2 bg-[#45B7BE] mt-2"></div>
+    <!-- Section Mengapa pilih E-Branch -->
+    <section class="max-w-6xl mx-auto  px-4 bg-white flex flex-col items-center">
+        <h1 class="text-3xl font-bold text-[#1E3A8A] mb-4">Mengapa pilih E-Branch</h1>
+        <div class="w-24 h-1 bg-[#1E3A8A] mb-12"></div>
+
+        <div class="flex flex-col md:flex-row justify-between w-full gap-8  ">
+            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 text-center flex-1">
+                <div class="flex justify-center mb-4">
+                    <div class="w-12 h-12 bg-yellow-300 rounded-full flex items-center justify-center text-white font-bold">
+                        1</div>
+                </div>
+                <h2 class="text-xl font-semibold text-[#1E3A8A] mb-2">100% Syariah Compliance</h2>
+                <p class="text-gray-600 text-sm">
+                    Seluruh layanan E-Branch dikelola sesuai prinsip syariah yang adil dan transparan. Transaksi bebas riba,
+                    dijalankan dengan akad yang sah menurut Islam serta diawasi oleh Dewan Syariah Nasional untuk memastikan
+                    integritas dan kepatuhan syariah dalam setiap proses.
+                </p>
             </div>
 
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                @foreach ($articles as $article)
-                    <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-                        @if ($article->image)
-                            <img src="{{ asset('storage/' . $article->image) }}"
-                                class="w-full h-[200px] object-cover" />
-                        @endif
-                        <div class="p-5">
-                            <p class="text-sm text-gray-600 mb-1">
-                                {{ $article->created_at->format('d/m/Y') }} | {{ $article->author }}
-                            </p>
-                            <h2 class="text-lg font-bold text-gray-900 mb-1 leading-tight">{{ $article->title }}</h2>
-                            <p class="text-sm text-gray-500 mb-3">
-                                {{ \Illuminate\Support\Str::limit(strip_tags($article->content), 50, '....') }}
-                            </p>
-                            <a href="{{ route('news.show', $article->id) }}"
-                                class="text-indigo-600 hover:underline font-semibold text-sm">Baca Selengkapnya</a>
-                        </div>
-                    </div>
-                @endforeach
+            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 text-center flex-1 relative">
+                <div class="flex justify-center mb-4">
+                    <div class="w-12 h-12 bg-yellow-300 rounded-full flex items-center justify-center text-white font-bold">
+                        2</div>
+                </div>
+                <h2 class="text-xl font-semibold text-[#1E3A8A] mb-2">Praktis & Cepat</h2>
+                <p class="text-gray-600 text-sm">
+                    Nikmati kemudahan membuka rekening, menyetor dana, hingga mengajukan pembiayaan tanpa perlu datang ke
+                    kantor cabang. Cukup melalui aplikasi atau website, semua proses dapat dilaksanakan dengan mudah dan di
+                    mana saja, secara cepat dan efisien.
+                </p>
+                <div
+                    class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-b-[20px] border-b-white">
+                </div>
             </div>
 
-            <div class="mt-8">
-                {{ $articles->links() }}
+            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 text-center flex-1">
+                <div class="flex justify-center mb-4">
+                    <div class="w-12 h-12 bg-yellow-300 rounded-full flex items-center justify-center text-white font-bold">
+                        3</div>
+                </div>
+                <h2 class="text-xl font-semibold text-[#1E3A8A] mb-2">Aman & Terpercaya</h2>
+                <p class="text-gray-600 text-sm">
+                    Keamanan data dan transaksi Anda menjaga prioritas. E-Branch dilengkapi sistem enkripsi canggih dan
+                    diawasi oleh regulator perbankan nasional. Didukung oleh Pemerintah Provinsi Jawa Tengah, E-Branch
+                    menjadi solusi keuangan yang terpercaya dan aman.
+                </p>
             </div>
         </div>
+    </section>
 
-        <!-- Footer -->
-        <footer class="bg-white border-t border-gray-200 mt-16">
-            <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-700">
+    <!-- Section Berita + AJAX pagination -->
+    <div class="w-full mx-auto px-20 mt-40">
+        <div id="berita" class="mb-6">
+            <h1 class="text-4xl font-bold leading-tight text-[#18494C]">Berita</h1>
+            <div class="w-24 h-2 bg-[#45B7BE] mt-2"></div>
+        </div>
 
-                <!-- Logo & Deskripsi -->
-                <div>
-                    <a href="{{ route('dashboard') }}" class="inline-flex items-center mb-4">
-                        <img src="https://bucket-api.baznas.go.id/bucket-api/file?bucket=bzn-fdr-smb-p5739641&file=attachments/rekening/172292650008666680_497-v2-Bank-Jateng-Syariah.png"
-                            alt="" width="100">
-                    </a>
-                    <p class="text-sm leading-relaxed">
-                        Solusi perbankan terpercaya yang memberikan layanan terbaik untuk masyarakat Jawa Tengah dan
-                        sekitarnya.
-                    </p>
-                </div>
-
-                <!-- Navigasi -->
-                <div>
-                    <h3 class="text-yellow-600 font-semibold mb-4">Navigasi</h3>
-                    <ul class="space-y-2">
-                        <li><a href="{{ route('deposito.index') }}"
-                                class="hover:text-yellow-600 transition">Deposito</a>
-                        </li>
-                        <li><a href="{{ route('tabungan.index') }}"
-                                class="hover:text-yellow-600 transition">Tabungan</a>
-                        </li>
-                        <li><a href="{{ route('pembiayaan.index') }}"
-                                class="hover:text-yellow-600 transition">Pembiayaan</a></li>
-                        @if (Auth::check() && Auth::user()->role === 'admin')
-                            <li><a href="{{ route('deposito.index') }}" class="hover:text-yellow-600 transition">Kelola
-                                    Pengajuan</a></li>
-                        @endif
-                    </ul>
-                </div>
-
-                <!-- Kontak -->
-                <div>
-                    <h3 class="text-yellow-600 font-semibold mb-4">Kontak Kami</h3>
-                    <address class="not-italic text-sm space-y-2">
-                        <p>Jl. Pemuda No.142, Semarang, Jawa Tengah</p>
-                        <p>Telp: 0243547541</p>
-                        <p>Email: <a href="mailto:callcenter14066@bankjateng.co.id"
-                                class="hover:text-yellow-600 transition">callcenter14066@bankjateng.co.id</a></p>
-                    </address>
-                </div>
-
-                <!-- Media Sosial -->
-                <div>
-                    <h3 class="text-yellow-600 font-semibold mb-4">Ikuti Kami</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" aria-label="Facebook" class="text-gray-500 hover:text-yellow-600 transition">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M22 12a10 10 0 1 0-11.5 9.9v-7h-3v-3h3v-2c0-3 1.8-4.7 4.5-4.7 1.3 0 2.6.2 2.6.2v3h-1.5c-1.5 0-2 1-2 2v2h3.4l-.5 3h-2.9v7A10 10 0 0 0 22 12z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Twitter" class="text-gray-500 hover:text-yellow-600 transition">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M22.46 6c-.77.35-1.6.6-2.46.7a4.3 4.3 0 0 0 1.9-2.38 8.6 8.6 0 0 1-2.7 1.04 4.3 4.3 0 0 0-7.3 3.92A12.2 12.2 0 0 1 3.15 5.1a4.3 4.3 0 0 0 1.33 5.7 4.27 4.27 0 0 1-1.95-.54v.05a4.3 4.3 0 0 0 3.46 4.2 4.3 4.3 0 0 1-1.94.07 4.3 4.3 0 0 0 4 3 8.6 8.6 0 0 1-5.3 1.82 8.75 8.75 0 0 1-1-.06 12.15 12.15 0 0 0 6.58 1.93c7.9 0 12.22-6.54 12.22-12.2 0-.19 0-.38-.01-.57A8.7 8.7 0 0 0 22.46 6z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Instagram" class="text-gray-500 hover:text-yellow-600 transition">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M7 2C4.79 2 3 3.79 3 6v12c0 2.21 1.79 4 4 4h10c2.21 0 4-1.79 4-4V6c0-2.21-1.79-4-4-4H7zm10 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-5 2.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9z" />
-                            </svg>
-                        </a>
+        <div id="berita-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach ($articles as $article)
+                <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+                    @if ($article->image)
+                        <div class="w-full h-52 overflow-hidden flex items-center justify-center bg-gray-100">
+                            <img src="{{ asset('storage/' . $article->image) }}" class="w-full h-full object-cover"
+                                alt="Gambar {{ $article->title }}" />
+                        </div>
+                    @endif
+                    <div class="p-5">
+                        <p class="text-sm text-gray-600 mb-1">
+                            {{ $article->created_at->format('d/m/Y') }} | {{ $article->author }}
+                        </p>
+                        <h2 class="text-lg font-bold text-gray-900 mb-1 leading-tight">{{ $article->title }}</h2>
+                        <p class="text-sm text-gray-500 mb-3">
+                            {{ \Illuminate\Support\Str::limit(strip_tags($article->content), 50, '....') }}
+                        </p>
+                        <a href="{{ route('news.show', $article->id) }}"
+                            class="text-indigo-600 hover:underline font-semibold text-sm">Baca Selengkapnya</a>
                     </div>
                 </div>
+            @endforeach
+        </div>
 
-            </div>
-
-            <div class="border-t border-gray-200 mt-8 py-4 text-center text-sm text-gray-500">
-                &copy; {{ date('Y') }} Bank Jateng. All rights reserved.
-            </div>
-        </footer>
+        <div id="pagination-links" class="mt-8">
+            {{ $articles->links() }}
+        </div>
     </div>
-</body>
 
-</html>
+    <!-- Tambahkan jQuery dan Script AJAX Pagination -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).on('click', '#pagination-links a', function(e) {
+            e.preventDefault();
+            let url = $(this).attr('href');
+
+            if (!url) return;
+
+            $.ajax({
+                url: url,
+                type: 'GET',
+                success: function(response) {
+                    const html = $(response);
+                    $('#berita-container').html(html.find('#berita-container').html());
+                    $('#pagination-links').html(html.find('#pagination-links').html());
+
+                    $('html, body').animate({
+                        scrollTop: $('#berita').offset().top - 100
+                    }, 500);
+                },
+                error: function() {
+                    alert('Gagal memuat data. Silakan coba lagi.');
+                }
+            });
+        });
+    </script>
+@endsection

@@ -22,10 +22,10 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'title'   => 'required',
-            'author'  => 'required',
+            'title' => 'required',
+            'author' => 'required',
             'content' => 'required',
-            'image'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
@@ -41,6 +41,11 @@ class ArticleController extends Controller
         return view('articles.show', compact('article'));
     }
 
+    public function showWelcome(Article $article)
+    {
+        return view('articles.show_welcome', compact('article'));
+    }
+
     public function edit(Article $article)
     {
         return view('articles.edit', compact('article'));
@@ -49,10 +54,10 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $data = $request->validate([
-            'title'   => 'required',
-            'author'  => 'required',
+            'title' => 'required',
+            'author' => 'required',
             'content' => 'required',
-            'image'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         if ($request->hasFile('image')) {

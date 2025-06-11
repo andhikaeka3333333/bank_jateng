@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminSubmissionController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\DepositoController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JatengaiController;
 use App\Http\Controllers\PembiayaanController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\SubmissionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/sejarah', [HistoryController::class, 'index']);
 
 
 Route::get('/dashboard', function () {
@@ -93,6 +95,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 // User publik bisa lihat artikel
 Route::get('/berita', [ArticleController::class, 'index'])->name('news.index');
 Route::get('/berita/{article}', [ArticleController::class, 'show'])->name('news.show');
+Route::get('/welcome/berita/{article}', [ArticleController::class, 'showWelcome'])->name('news.show');
 
 
 require __DIR__ . '/auth.php';
