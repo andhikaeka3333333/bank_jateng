@@ -46,60 +46,85 @@
             </p>
         </div>
         <div class="w-1/2 flex items-center justify-center">
-            <img src="/images/salamjateng.jpg" alt="Bank Jateng Syariah"
-                class="w-3/4 h-auto object-contain">
+            <img src="/images/salamjateng.jpg" alt="Bank Jateng Syariah" class="w-3/4 h-auto object-contain">
         </div>
     </section>
 
     <!-- Section Mengapa pilih E-Branch -->
-    <section class="max-w-6xl mx-auto  px-4 bg-white flex flex-col items-center">
-        <h1 class="text-3xl font-bold text-[#1E3A8A] mb-4">Mengapa pilih E-Branch</h1>
-        <div class="w-24 h-1 bg-[#1E3A8A] mb-12"></div>
+    <section class="bg-white py-12">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-semibold mb-8 border-b-4 inline-block pb-2"
+                style="color: #000A63; border-color: #000A63;">
+                Mengapa pilih E-Branch
+            </h2>
 
-        <div class="flex flex-col md:flex-row justify-between w-full gap-8  ">
-            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 text-center flex-1">
-                <div class="flex justify-center mb-4">
-                    <div class="w-12 h-12 bg-yellow-300 rounded-full flex items-center justify-center text-white font-bold">
-                        1</div>
+            <div class="grid grid-cols-[1fr_auto_1fr] gap-x-4 gap-y-6 mt-10 items-start">
+                <!-- Box 1 -->
+                <div class="bg-white shadow-md p-6 rounded-lg">
+                    <div class="flex items-start space-x-4">
+                        <div
+                            class="w-[150px] h-[30px] flex items-center justify-center bg-yellow-200 text-sm font-bold text-gray-800 rounded-full">
+                            1
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1">100% Syariah Compliance</h3>
+                            <p class="text-sm text-gray-600 text-left">
+                                Seluruh layanan E-Branch dikelola sesuai prinsip syariah yang adil dan transparan. Transaksi
+                                bebas riba, dijalankan dengan akad yang sah menurut Islam, serta diawasi langsung oleh Dewan
+                                Syariah Nasional untuk memastikan integritas dan kepatuhan syariah dalam setiap proses.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="text-xl font-semibold text-[#1E3A8A] mb-2">100% Syariah Compliance</h2>
-                <p class="text-gray-600 text-sm">
-                    Seluruh layanan E-Branch dikelola sesuai prinsip syariah yang adil dan transparan. Transaksi bebas riba,
-                    dijalankan dengan akad yang sah menurut Islam serta diawasi oleh Dewan Syariah Nasional untuk memastikan
-                    integritas dan kepatuhan syariah dalam setiap proses.
-                </p>
+
+                <!-- Arrow -->
+                <div class="flex justify-center items-center h-full">
+                    <img src="images/arrow.png" class="w-[200px] h-auto" />
+                </div>
+
+                <!-- Box 2 -->
+                <div class="bg-white shadow-md p-6 rounded-lg">
+                    <div class="flex items-start space-x-4">
+                        <div
+                            class="w-[150px] h-[30px] flex items-center justify-center bg-yellow-200 text-sm font-bold text-gray-800 rounded-full">
+                            2
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 mb-1">Praktis & Cepat</h3>
+                            <p class="text-sm text-gray-600 text-left">
+                                Nikmati kemudahan membuka rekening, menyetor dana, hingga mengajukan pembiayaan tanpa perlu
+                                datang ke kantor cabang. Cukup melalui aplikasi atau website, semua proses dapat dilakukan
+                                kapan saja dan di mana saja, secara cepat dan efisien.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Box 3 -->
+                <div class="col-span-3 flex justify-center">
+                    <div class="bg-white shadow-md p-6 rounded-lg w-full max-w-[calc(50%-1rem)]">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-[150px] h-[30px] flex items-center justify-center bg-yellow-200 text-sm font-bold text-gray-800 rounded-full">
+                                3
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-1">Aman & Terpercaya</h3>
+                                <p class="text-sm text-gray-600 text-left">
+                                    Keamanan data dan transaksi Anda menjadi prioritas. E-Branch dilengkapi sistem enkripsi
+                                    canggih dan diawasi oleh regulasi perbankan nasional. Didukung langsung oleh Pemerintah
+                                    Provinsi Jawa Tengah, E-Branch menjadi solusi keuangan yang terpercaya dan aman.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 text-center flex-1 relative">
-                <div class="flex justify-center mb-4">
-                    <div class="w-12 h-12 bg-yellow-300 rounded-full flex items-center justify-center text-white font-bold">
-                        2</div>
-                </div>
-                <h2 class="text-xl font-semibold text-[#1E3A8A] mb-2">Praktis & Cepat</h2>
-                <p class="text-gray-600 text-sm">
-                    Nikmati kemudahan membuka rekening, menyetor dana, hingga mengajukan pembiayaan tanpa perlu datang ke
-                    kantor cabang. Cukup melalui aplikasi atau website, semua proses dapat dilaksanakan dengan mudah dan di
-                    mana saja, secara cepat dan efisien.
-                </p>
-                <div
-                    class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-b-[20px] border-b-white">
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 text-center flex-1">
-                <div class="flex justify-center mb-4">
-                    <div class="w-12 h-12 bg-yellow-300 rounded-full flex items-center justify-center text-white font-bold">
-                        3</div>
-                </div>
-                <h2 class="text-xl font-semibold text-[#1E3A8A] mb-2">Aman & Terpercaya</h2>
-                <p class="text-gray-600 text-sm">
-                    Keamanan data dan transaksi Anda menjaga prioritas. E-Branch dilengkapi sistem enkripsi canggih dan
-                    diawasi oleh regulator perbankan nasional. Didukung oleh Pemerintah Provinsi Jawa Tengah, E-Branch
-                    menjadi solusi keuangan yang terpercaya dan aman.
-                </p>
-            </div>
         </div>
     </section>
+
 
     <!-- Section Berita + AJAX pagination -->
     <div class="w-full mx-auto px-20 mt-40">
