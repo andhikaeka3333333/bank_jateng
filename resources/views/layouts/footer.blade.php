@@ -1,5 +1,6 @@
+
 <!-- Footer Section -->
-<footer class="bg-white border-t border-gray-200 mt-16">
+<footer class="bg-white border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-700">
         <!-- Logo & Deskripsi -->
         <div>
@@ -46,8 +47,6 @@
             <h3 class="text-yellow-600 font-semibold mb-4">Ikuti Kami</h3>
             <div class="flex space-x-4">
                 <a href="https://www.facebook.com/bankjatengsyariah/?locale=id_ID" aria-label="Facebook" class="text-gray-500 hover:text-yellow-600 transition">
-
-
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M22 12a10 10 0 1 0-11.5 9.9v-7h-3v-3h3v-2c0-3 1.8-4.7 4.5-4.7 1.3 0 2.6.2 2.6.2v3h-1.5c-1.5 0-2 1-2 2v2h3.4l-.5 3h-2.9v7A10 10 0 0 0 22 12z" />

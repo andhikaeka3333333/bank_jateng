@@ -2,11 +2,15 @@
 
 @section('content')
     <div class="max-w-4xl mx-auto py-10 px-6">
-        <h2 class="text-2xl font-bold text-[#000A63] mb-6">Pengajuan Deposito Saya</h2>
+        <div>
+            <h2 class="text-base sm:text-lg lg:text-1xl font-bold text-[#18494C] leading-tight">Daftar Pengajuan Deposito Saya</h2>
+            <div class="w-12 sm:w-16 h-1 bg-[#45B7BE] mt-1"></div>
+        </div>
+
 
         <div class="flex justify-end mb-4">
             <a href="{{ route('deposito.create') }}"
-                class="inline-block px-4 py-2 bg-[#000A63] text-white font-semibold rounded-lg hover:bg-[#000A50] transition-colors duration-200">
+                class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
                 + Ajukan Deposito
             </a>
         </div>

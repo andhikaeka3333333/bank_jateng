@@ -24,7 +24,7 @@
     </style>
 </head>
 
-<body class="font-sans bg-gray-50 min-h-screen">
+<body class="font-sans">
     <!-- Floating Button JatengAI -->
     <a href="{{ url('/jatengai') }}"
         class="fixed bottom-6 right-6 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition duration-300"
@@ -38,7 +38,7 @@
 
 
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-6 py-8">
+    <main>
         @yield('content')
     </main>
 

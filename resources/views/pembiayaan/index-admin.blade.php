@@ -2,7 +2,10 @@
 
 @section('content')
     <div class="max-w-6xl mx-auto mt-8 p-6 bg-white rounded shadow">
-        <h2 class="text-3xl font-semibold mb-6">Daftar Pengajuan Pembiayaan</h2>
+        <div>
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#18494C] leading-tight">Daftar Pengajuan Pembiayaan</h1>
+            <div class="w-16 sm:w-24 h-2 bg-[#45B7BE] mt-2"></div>
+        </div>
 
         @if (session('success'))
             <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
@@ -10,7 +13,7 @@
             </div>
         @endif
 
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto mt-8">
             <table class="min-w-full table-auto border-collapse border border-gray-200">
                 <thead>
                     <tr class="bg-gray-100">

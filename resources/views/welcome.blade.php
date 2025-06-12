@@ -20,7 +20,7 @@
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-8 sm:mb-16">
                 Bank Jateng <span class="text-yellow-400">Syariah</span>
             </h1>
-            <a href="#"
+            <a href="/login"
                 class="inline-block bg-yellow-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-md font-semibold hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
                 Mulai Sekarang
             </a>
@@ -124,7 +124,7 @@
     </section>
 
     <!-- Section Berita + AJAX pagination -->
-<div class="w-full mx-auto px-4 sm:px-6 lg:px-20 mt-20 sm:mt-40">
+<div class="bg-white w-full mx-auto px-4 sm:px-6 lg:px-20 mt-20 sm:mt-40">
     <div id="berita" class="mb-6">
         <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-[#18494C]">Berita</h1>
         <div class="w-16 sm:w-24 h-2 bg-[#45B7BE] mt-2"></div>
