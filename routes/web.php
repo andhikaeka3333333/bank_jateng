@@ -70,8 +70,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/tabungan', [SubmissionController::class, 'index'])->name('tabungan.index');
         Route::post('/tabungan', [SubmissionController::class, 'store'])->name('tabungan.store');
 
-        Route::get('/jatengai', [JatengaiController::class, 'index']);
-        Route::post('/jatengai/ask', [JatengaiController::class, 'ask'])->name('jatengai.ask');
+
     });
 
     Route::middleware(['auth', 'admin'])->group(function () {
@@ -94,11 +93,17 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('articles', ArticleController::class);
 });
 
+Route::middleware(['auth'])->group(function () {
+        Route::get('/profil', [ProfileController::class, 'index'])->name('profil.index');
+        Route::post('/profil/password', [ProfileController::class, 'updatePassword'])->name('profil.updatePassword');
+    });
+
 // User publik bisa lihat artikel
 Route::get('/berita', [ArticleController::class, 'index'])->name('news.index');
 Route::get('/berita/{article}', [ArticleController::class, 'show'])->name('news.show');
 Route::get('/welcome/berita/{article}', [ArticleController::class, 'showWelcome'])->name('news.show');
-
+Route::get('/jatengai', [JatengaiController::class, 'index']);
+Route::post('/jatengai/ask', [JatengaiController::class, 'ask'])->name('jatengai.ask');
 
 
 require __DIR__ . '/auth.php';

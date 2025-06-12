@@ -2,7 +2,11 @@
 
 @section('content')
     <div class="max-w-6xl mx-auto mt-8 p-6 bg-white rounded shadow">
-        <h2 class="text-3xl font-semibold mb-6">Daftar Pengajuan Deposito</h2>
+        <div>
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#18494C] leading-tight">Daftar Pengajuan Deposito
+            </h1>
+            <div class="w-16 sm:w-24 h-2 bg-[#45B7BE] mt-2"></div>
+        </div>
 
         @if (session('success'))
             <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
@@ -10,7 +14,7 @@
             </div>
         @endif
 
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto mt-8">
             <table class="min-w-full table-auto border-collapse border border-gray-200">
                 <thead>
                     <tr class="bg-gray-100">
@@ -32,14 +36,14 @@
                             <td class="border border-gray-300 px-4 py-2">{{ $item->nama_lengkap }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $item->nik }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $item->alamat }}</td>
-                            <td class="border border-gray-300 px-4 py-2">{{ number_format($item->jumlah, 0, ',', '.') }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ number_format($item->jumlah, 0, ',', '.') }}
+                            </td>
                             <td class="border border-gray-300 px-4 py-2">{{ $item->jangka_waktu }}</td>
                             <td class="border border-gray-300 px-4 py-2">
                                 @if ($item->foto_ktp)
-                                    <img src="{{ asset('storage/' . $item->foto_ktp) }}"
-                                     alt="Foto KTP"
-                                     class="w-16 h-16 object-cover rounded cursor-pointer border"
-                                     onclick="showModal('{{ asset('storage/' . $item->foto_ktp) }}')" />
+                                    <img src="{{ asset('storage/' . $item->foto_ktp) }}" alt="Foto KTP"
+                                        class="w-16 h-16 object-cover rounded cursor-pointer border"
+                                        onclick="showModal('{{ asset('storage/' . $item->foto_ktp) }}')" />
                                 @else
                                     <span class="text-gray-500 italic">Belum ada</span>
                                 @endif
@@ -85,7 +89,8 @@
     <!-- Modal Preview Gambar -->
     <div id="imgModal" class="fixed inset-0 hidden bg-black bg-opacity-70 z-50 flex items-center justify-center">
         <div class="relative">
-            <button onclick="hideModal()" class="absolute top-0 right-0 text-white text-2xl font-bold px-4 py-2">&times;</button>
+            <button onclick="hideModal()"
+                class="absolute top-0 right-0 text-white text-2xl font-bold px-4 py-2">&times;</button>
             <img id="modalImage" src="" class="max-w-full max-h-screen rounded shadow-lg">
         </div>
     </div>
