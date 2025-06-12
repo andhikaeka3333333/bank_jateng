@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@yield('title', 'Branch Bank Jateng')</title>
-
-
-
+    <link rel="icon"
+        href="{{ asset('https://bucket-api.baznas.go.id/bucket-api/file?bucket=bzn-fdr-smb-p5739641&file=attachments/rekening/172292650008666680_497-v2-Bank-Jateng-Syariah.png') }}"
+        type="image/png">
     <!-- Compiled Tailwind CSS -->
     <link rel="stylesheet" href="/css/app.css">
 
