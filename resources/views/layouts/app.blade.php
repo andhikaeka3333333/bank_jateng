@@ -5,13 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@yield('title', 'Branch Bank Jateng')</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Alpine.js for interactivity -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="icon"href="{{ asset('https://bucket-api.baznas.go.id/bucket-api/file?bucket=bzn-fdr-smb-p5739641&file=attachments/rekening/172292650008666680_497-v2-Bank-Jateng-Syariah.png') }}"type="image/png">
+    <!-- Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="/css/app.css">
 
     <style>
-        /* Style untuk link aktif dan normal */
         .nav-link {
             @apply text-gray-600 hover:text-yellow-500 transition font-medium;
         }
@@ -26,7 +24,7 @@
     </style>
 </head>
 
-<body class="bg-gray-50 min-h-screen">
+<body class="font-sans bg-gray-50 min-h-screen">
     <!-- Floating Button JatengAI -->
     <a href="{{ url('/jatengai') }}"
         class="fixed bottom-6 right-6 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition duration-300"

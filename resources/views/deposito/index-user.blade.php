@@ -2,30 +2,30 @@
 
 @section('content')
     <div class="max-w-4xl mx-auto py-10 px-6">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">Pengajuan Deposito Saya</h2>
+        <h2 class="text-2xl font-bold text-[#000A63] mb-6">Pengajuan Deposito Saya</h2>
 
         <div class="flex justify-end mb-4">
             <a href="{{ route('deposito.create') }}"
-                class="inline-block px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+                class="inline-block px-4 py-2 bg-[#000A63] text-white font-semibold rounded-lg hover:bg-[#000A50] transition-colors duration-200">
                 + Ajukan Deposito
             </a>
         </div>
 
-        <div class="bg-white shadow-xl rounded-lg overflow-hidden border border-gray-200">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
             <table class="min-w-full divide-y divide-gray-100">
-                <thead class="bg-gradient-to-r from-gray-100 to-white">
+                <thead class="bg-gradient-to-r from-gray-50 to-white">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                        <th class="px-6 py-3 text-left text-xs font-semibold text-[#000A63] uppercase tracking-wider">
                             Nominal
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                        <th class="px-6 py-3 text-left text-xs font-semibold text-[#000A63] uppercase tracking-wider">
                             Status
                         </th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-100">
                     @forelse($depositos as $item)
-                        <tr class="hover:bg-gray-50 transition">
+                        <tr class="hover:bg-gray-50 transition-colors duration-200">
                             <td class="px-6 py-4 text-gray-800 font-medium">
                                 Rp{{ number_format($item->jumlah, 0, ',', '.') }}
                             </td>
@@ -37,14 +37,14 @@
                                         default => 'bg-amber-100 text-amber-800 border border-amber-300',
                                     };
                                 @endphp
-                                <span class="px-4 py-1 rounded-full text-sm font-semibold {{ $statusColor }}">
+                                <span class="px-4 py-1 rounded-full text-sm font-medium {{ $statusColor }}">
                                     {{ ucfirst($item->status) }}
                                 </span>
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="2" class="px-6 py-4 text-center text-gray-500 italic">
+                            <td colspan="2" class="px-6 py-4 text-center text-[#000A63] italic">
                                 Belum ada pengajuan deposito.
                             </td>
                         </tr>

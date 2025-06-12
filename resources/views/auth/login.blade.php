@@ -5,27 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login Bank Jateng</title>
   <link rel="stylesheet" href="/css/app.css">
-
 </head>
-<body class="font-sans bg-gradient-to-b from-[#1D426D] to-[#2C7F8E] min-h-screen flex items-center justify-center flex-col relative overflow-hidden">
+<body class="bg-gradient-to-b from-[#1D426D] to-[#2C7F8E] min-h-screen flex items-center justify-center flex-col relative overflow-hidden font-sans">
 
-
-  <!-- Gambar wayang kiri -->
+  <!-- Wayang kiri -->
   <img src="/images/wayang.png" alt="Wayang Kiri" class="absolute left-0 top-1/2 transform -translate-y-1/2 w-30 opacity-70">
 
-  <!-- Gambar wayang kanan (opsional, bisa hapus jika tidak ingin) -->
-  <img src="/images/image 8 (1).png" alt="Wayang Kanan" class="absolute right-0 top-30 transform -translate-y-1/2 w-70 opacity-70 ">
+  <!-- Wayang kanan -->
+  <img src="/images/image 8 (1).png" alt="Wayang Kanan" class="absolute right-0 top-30 transform -translate-y-1/2 w-70 opacity-70">
 
   <!-- Card Login -->
-  <div class="bg-[#3E607C] rounded-xl shadow-lg p-8 w-full max-w-md text-white relative z-10 mb-5 mt-20">
+  <div class="bg-[#3E607C] text-white rounded-xl shadow-lg p-8 w-full max-w-md relative z-10 mb-5 mt-20">
+
     <div class="text-center mb-6">
       <img src="https://syariah.bankjateng.co.id/media/LOGO_SYARIAH-04.png" alt="Bank Jateng" class="mx-auto h-12 mb-2">
       <h1 class="text-2xl font-semibold">Masuk ke Bank Jateng</h1>
       <p class="text-yellow-400 text-sm font-semibold">Internet Banking Personal Bank Jateng Syariah</p>
     </div>
 
-    <form method="POST" action="{{ route('login') }}">
+    {{-- Error Flash --}}
+    @if ($errors->any())
+      <div class="bg-red-100 text-red-700 p-3 mb-4 rounded text-sm">
+        {{ $errors->first() }}
+      </div>
+    @endif
+
+    <form method="POST" action="{{ route('login') }}" onsubmit="return validateForm()">
       @csrf
+
       <div class="mb-4">
         <label for="email" class="block text-sm font-semibold mb-2">Email</label>
         <input type="email" id="email" name="email" class="text-sm w-full px-4 py-2 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="you@example.com" required>
@@ -57,7 +64,6 @@
     </div>
   </div>
 
-  <!-- Tambahan di luar card -->
   <div class="text-center mt-2 text-xs text-white z-10">
     Belum punya akun? <a href="/register" class="text-blue-300 hover:underline">Daftar disini</a>
   </div>
@@ -77,6 +83,15 @@
         : `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.478 0-8.268-2.943-9.542-7z" />`;
     });
+
+    function validateForm() {
+      const password = document.getElementById('password').value;
+      if (password.length < 8) {
+        alert('Password minimal 8 karakter');
+        return false;
+      }
+      return true;
+    }
   </script>
 </body>
 </html>
